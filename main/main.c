@@ -20,7 +20,7 @@
 #include "lwip/sys.h"
 #include "lwip/netdb.h"
 #include "lwip/dns.h"
-#include "../../json/include/cJSON.h"
+//#include "../../json/include/cJSON.h"
 
 #define BUF_SIZE		1024
 #define SSEND_MAX		1500
@@ -371,6 +371,7 @@ static char *getJsonResp(char *httpResp)
 	return resp;
 }
 
+/*
 static void parseCoord(char *jsonResp, Location *loc)
 {
 	cJSON *root = cJSON_Parse(jsonResp);
@@ -386,6 +387,7 @@ static void parseCoord(char *jsonResp, Location *loc)
 
 	cJSON_Delete(root);
 }
+*/
 
 static char *http_postStr(const char *endpoint, const char *host, char *jsonData)
 {
@@ -400,6 +402,7 @@ static char *http_postStr(const char *endpoint, const char *host, char *jsonData
 	return postStr;
 }
 
+/*
 static void update_location(char *json)
 {
 	char *postStr = http_postStr(GET_COORD, FLOW_HOST, json);
@@ -444,7 +447,9 @@ static void update_location(char *json)
 	free(postStr);
 	cJSON_Delete(root);
 }
+*/
 
+/*
 static void wifi_scanAP(void *pvParameters)
 {
 	uint16_t num_aps;
@@ -493,6 +498,7 @@ static void wifi_scanAP(void *pvParameters)
 	cJSON_Delete(root);
 	vTaskDelete(NULL);
 }
+*/
 
 //an example of echo test with hardware flow control on UART1
 static void uart_echo_test(void *pvParameters)
